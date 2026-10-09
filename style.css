@@ -1,0 +1,152 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6c9, #ff5c8a, #ff8fab);
+    color: #8b123b;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(120, 0, 40, 0.25);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.instrucao {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.coracao {
+    border: none;
+    background: transparent;
+    font-size: 100px;
+    cursor: pointer;
+    animation: pulsar 1s infinite;
+    transition: transform 0.3s;
+}
+
+.coracao:hover {
+    transform: scale(1.2);
+}
+
+.clique {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #b52b58;
+}
+
+.surpresa {
+    margin-top: 30px;
+    animation: aparecer 1s ease;
+}
+
+.surpresa[hidden] {
+    display: none;
+}
+
+.foto {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    border: 5px solid #ff8fab;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(180, 30, 80, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.surpresa p {
+    margin-bottom: 16px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.final {
+    font-weight: bold;
+    color: #d4145a;
+}
+
+.assinatura {
+    font-style: italic;
+}
+
+.fundo-coracoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 28px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 28px 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .coracao {
+        font-size: 85px;
+    }
+
+    .surpresa p {
+        font-size: 16px;
+    }
+}
